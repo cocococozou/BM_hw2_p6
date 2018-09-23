@@ -1,5 +1,8 @@
 library(tidyverse)
+library(ggplot2)
+
 rm(list=ls(all=TRUE))
+
 
 ##read files
 Migraine_data <- read.csv("./Migraine.csv")
@@ -62,4 +65,5 @@ length(filter(Migraine_Pos,!is.na(NDDIE),NDDIE>15)$NDDIE)
 length(filter(Migraine_Neg,!is.na(CESD),CESD>15)$CESD)
 length(filter(Migraine_Pos,!is.na(CESD),CESD>15)$CESD)
 
-##
+##PLOT
+ggplot(Migraine_Neg,aes(x=ABNAS.memory))+geom_histogram()
