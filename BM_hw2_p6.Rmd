@@ -1,0 +1,27 @@
+---
+title: "BW_HW2_P6"
+author: "Coco"
+date: "9/26/2018"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+##read files
+Migraine_data <- read.csv("./Migraine.csv")
+
+Migraine_Pos<-filter(Migraine_data,Migraine==1)
+Migraine_Neg<-filter(Migraine_data,Migraine==0)
+
+```
+
+pLOT
+
+```{r}
+par(mfrow=c(1,2))
+ggplot(Migraine_Pos,aes(x=CESD))+geom_bar()
+ggplot(Migraine_Neg,aes(x=CESD))+geom_bar()
+```
+
+
